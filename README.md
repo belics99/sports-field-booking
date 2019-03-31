@@ -70,7 +70,7 @@ Second:
 
 Third:
 ```php
-(strtotime($end) > strtotime($key['start']) && strtotime($end) <= strtotime($key['end']))
+(strtotime($start) <= strtotime($key['start']) && strtotime($end) >= strtotime($key['end']))
 ```
 ![screenshot](https://image.prntscr.com/image/mxReTJCiT5q8mCLclZxqVA.png)
 
