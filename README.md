@@ -21,14 +21,14 @@ Now you find your pre-created database on the left side of the page and click on
 Now we need to create a table where we'll save data.<br>
 Write following code:
 ```mysql
-CREATE TABLE sf_booked(id INTEGER PRIMARY KEY AUTO_INCREMENT, day DATE, stat TIME, end TIME, book_time DATETIME, user TEXT));
+CREATE TABLE sf_booked(id INTEGER PRIMARY KEY AUTO_INCREMENT,field_num INTEGER, day DATE, stat TIME, end TIME, book_time DATETIME, user TEXT));
 ```
 ```
----------------------------------------------
-| ID | DAY | STRAT | END | BOOK_TIME | USER |
-+----+-----+-------+-----+-----------+------+
-|    |     |       |     |           |      |
----------------------------------------------
+---------------------------------------------------------
+| ID | FIELD_NUM | DAY | STRAT | END | BOOK_TIME | USER |
++----+-----------+-----+-------+-----+-----------+------+
+|    |           |     |       |     |           |      |
+---------------------------------------------------------
 ```
 
 ### Set params
