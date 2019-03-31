@@ -30,7 +30,7 @@ class DB
 
 	//function for fetching data about booked field
 	function getFields($date,$field_num){
-		$sql="SELECT * FROM sf_booked WHERE `dan`= ? AND `broj_terena`= ? ORDER BY `pocetak`,`kraj`";
+		$sql="SELECT * FROM sf_booked WHERE `dan`= ? AND `field_num`= ? ORDER BY `start`,`end`";
 		$res=$this->pdo->prepare($sql);
 		$res->execute([$date,$field_num]);
 		$row=$res->rowCount();
