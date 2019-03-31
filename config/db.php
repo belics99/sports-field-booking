@@ -8,7 +8,7 @@ class DB
 	const host="localhost";	//localhost
 	const user="root";	//root
 	const pass="";	//
-	const dbName="tenis_zakazivanje"; //db_name
+	const dbName="sf_booking_sys"; //db_name
 	const charset="utf8";	//charset
 
 	private $pdo;
@@ -30,7 +30,7 @@ class DB
 
 	//function for fetching data about booked field
 	function getFields($date,$field_num){
-		$sql="SELECT * FROM rezervacija WHERE `dan`= ? AND `broj_terena`= ? ORDER BY `pocetak`,`kraj`";
+		$sql="SELECT * FROM sf_booked WHERE `dan`= ? AND `broj_terena`= ? ORDER BY `pocetak`,`kraj`";
 		$res=$this->pdo->prepare($sql);
 		$res->execute([$date,$field_num]);
 		$row=$res->rowCount();
@@ -39,7 +39,7 @@ class DB
 			$arr=array();
 			$rows=$res->fetchAll();
 			foreach ($rows as $row ) {
-				$arr[$i++]=array("id" => $row['id'], "day" => $row['dan'], "start" => $row['pocetak'], "end" => $row['kraj']);
+				$arr[$i++]=array("id" => $row['id'], "day" => $row['day'], "start" => $row['start'], "end" => $row['end']);
 			}			
 			return $arr;
 		}
@@ -51,7 +51,7 @@ class DB
 	//function for inserting book info
 	function insertBook($field_num,$date_x,$start_x,$end_x,$user){
 		$bookTime=date('Y-m-d H:i:s');
-		$sql="INSERT INTO rezervacija (`broj_terena`,`dan`,`pocetak`,`kraj`,`vreme_rezervacije`,`user`) VALUES (:field_num,:date_x,:start_x,:end_x,:bookTime,:user)";
+		$sql="INSERT INTO sf_booked (`field_num`,`day`,`start`,`end`,`book_time`,`user`) VALUES (:field_num,:date_x,:start_x,:end_x,:bookTime,:user)";
 		$res=$this->pdo->prepare($sql);
 		$res->execute(["field_num" => $field_num, "date_x" => $date_x, "start_x" => $start_x, "end_x" => $end_x, "bookTime" => $bookTime, "user" => $user]);
 	}	
