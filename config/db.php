@@ -6,8 +6,8 @@ class DB
 {	
 	//this info depends on your own setup on your localhost
 	const host="localhost";	//localhost
-	const user="root";	//root
-	const pass="";	//
+	const user="root";	//username
+	const pass="";	//password
 	const dbName="sf_booking_sys"; //db_name
 	const charset="utf8";	//charset
 
