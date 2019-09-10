@@ -60,20 +60,23 @@ First:
 ![screenshot](https://image.prntscr.com/image/0OWyBlvGTtW0jVMWvJSsDQ.png)
 
 Second:
+<br>
 ![screenshot](https://image.prntscr.com/image/ZHpnlB3dT9mRrHRGAsqztQ.png)
 
 Third:
+<br>
 ![screenshot](https://image.prntscr.com/image/mxReTJCiT5q8mCLclZxqVA.png)
 
 Fourth:
+<br>
 ![screenshot](https://image.prntscr.com/image/g_ph7d55RbeCfNGj-Yg4rw.png)
 
-This part solves first and third situation
+This part solves the first and third situation
 ```php
 (strtotime($start) <= strtotime($key['start']) && strtotime($end) > strtotime($key['start']))
 ```
 
-This part solves second and fourth situation
+This part solves the second and fourth situation
 ```php
 (strtotime($start) >= strtotime($key['start']) && strtotime($start) < strtotime($key['end']))
 ```
