@@ -54,7 +54,9 @@ This *if* checks if time period($start - $end) is free to be booked.<br>
 We have 4 possibilities to check<br>
 ![#79c375](https://placehold.it/15/79c375/000000?text=+) $start and $end - **Trying to book**<br>
 ![#af1919](https://placehold.it/15/af1919/000000?text=+) $key['start'] and $key['end'] - **Booked**<br><br>
+
 First:
+<br>
 ![screenshot](https://image.prntscr.com/image/0OWyBlvGTtW0jVMWvJSsDQ.png)
 
 Second:
