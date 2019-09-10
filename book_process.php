@@ -42,11 +42,9 @@ if($check){
 				foreach ($arr as $key) {
 					//checks if  time period($start - $end) is free to be booked
 					if(
-						(strtotime($end) > strtotime($key['start']) && strtotime($end) <= strtotime($key['end'])) ||
-						(strtotime($start) >= strtotime($key['start']) && strtotime($start) < strtotime($key['end'])) ||
-						(strtotime($start) <= strtotime($key['start']) && strtotime($end) >= strtotime($key['end'])) ||
-						(strtotime($start) > strtotime($key['start']) && strtotime($end) < strtotime($key['end']))
-						){	
+						(strtotime($start) <= strtotime($key['start']) && strtotime($end) > strtotime($key['start'])) ||
+						(strtotime($start) >= strtotime($key['start']) && strtotime($start) < strtotime($key['end']))
+					){	
 						$notIn=0;					
 					}		
 				}				
@@ -55,11 +53,8 @@ if($check){
 				foreach ($arr as $key) {	
 					//checks if  time period($start - $end) is free to be booked and if $start greater than 'now'	
 					if(
-						strtotime($start)<=strtotime(date('H:i:s')) ||
-						(strtotime($end) > strtotime($key['start']) && strtotime($end) <= strtotime($key['end'])) ||
-						(strtotime($start) >= strtotime($key['start']) && strtotime($start) < strtotime($key['end'])) ||
-						(strtotime($start) <= strtotime($key['start']) && strtotime($end) >= strtotime($key['end'])) ||
-						(strtotime($start) > strtotime($key['start']) && strtotime($end) < strtotime($key['end']))
+						(strtotime($start) <= strtotime($key['start']) && strtotime($end) > strtotime($key['start'])) ||
+						(strtotime($start) >= strtotime($key['start']) && strtotime($start) < strtotime($key['end']))
 					){	
 						$notIn=0;					
 					}		
